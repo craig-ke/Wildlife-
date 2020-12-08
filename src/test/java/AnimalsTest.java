@@ -1,6 +1,6 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 public class AnimalsTest {
     @Test
@@ -9,7 +9,14 @@ public class AnimalsTest {
         assertEquals(true,testAnimal instanceof Animals);
     }
 
+    @Test
+    public void allInstancesAreSaved() {
+        Animals testAnimal=setUpNewAnimal();
+        testAnimal.save();
+        assertTrue(Animals.all().get(0).equals(testAnimal));
+    }
+
     private Animals setUpNewAnimal() {
-        return new Animals ( "Antellope","normal");
+        return new Animals ( "Antelope","normal");
     }
 }
