@@ -29,6 +29,15 @@ public class AnimalsTest {
 
         }
     }
+
+    @Test
+    public void findByIdReturnsCorrectInfo() {
+        Animals testAnimal=setUpNewAnimal();
+        testAnimal.save();
+        Animals foundAnimal= Animals.find(testAnimal.getId());
+        assertTrue(foundAnimal.equals(testAnimal));
+    }
+
     private Animals setUpNewAnimal() {
         return new Animals ( "Antelope","normal");
     }
