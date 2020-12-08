@@ -38,6 +38,14 @@ public class AnimalsTest {
         assertTrue(foundAnimal.equals(testAnimal));
     }
 
+    @Test
+    public void deleteById() {
+        Animals testAnimal=setUpNewAnimal();
+        testAnimal.save();
+        testAnimal.delete();
+        assertEquals(null,Animals.find(testAnimal.getId()));
+    }
+
     private Animals setUpNewAnimal() {
         return new Animals ( "Antelope","normal");
     }
