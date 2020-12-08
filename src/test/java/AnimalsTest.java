@@ -1,5 +1,7 @@
 import org.junit.Test;
 
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class AnimalsTest {
@@ -44,6 +46,17 @@ public class AnimalsTest {
         testAnimal.save();
         testAnimal.delete();
         assertEquals(null,Animals.find(testAnimal.getId()));
+    }
+
+    @Test
+    public void deleteAllEntries() {
+        Animals testAnimal=setUpNewAnimal();
+        Animals otherAnimal=setUpNewAnimal();
+        testAnimal.save();
+        otherAnimal.save();
+        Animals.deleteAll();
+        List<Animals> animals=Animals.all();
+        assertEquals(0,animals.size());
     }
 
     private Animals setUpNewAnimal() {
