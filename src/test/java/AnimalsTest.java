@@ -59,6 +59,17 @@ public class AnimalsTest {
         assertEquals(0,animals.size());
     }
 
+    @Test
+    public void ensureNameFieldCannotBeEmpty(){
+        Animals testAnimal=new Animals("","normal");
+        try {
+            testAnimal.save();
+        }catch (IllegalArgumentException e){
+
+        }
+    }
+
+
     private Animals setUpNewAnimal() {
         return new Animals ( "Antelope","normal");
     }
