@@ -10,19 +10,19 @@ public class EndangeredAnimalsTest {
         assertEquals(true,testAnimal instanceof EndangeredAnimals);
     }
 
-    @Test
-    public void allInstancesAreSaved(){
-        EndangeredAnimals testAnimal=setUpNewAnimal();
-        testAnimal.save();
-        assertEquals(EndangeredAnimals.all().get(0).getHealth(), testAnimal.getHealth());
-    }
-//
+//    @Test
+//    public void allInstancesAreSaved(){
+//        EndangeredAnimals testAnimal=setUpNewAnimal();
+//        testAnimal.save();
+//        assertEquals(EndangeredAnimals.all().get(0).getHealth(), testAnimal.getHealth());
+//    }
+
 //    @Test
 //    public void findByIdReturnsCorrectInfo(){
 //        EndangeredAnimals testAnimal=setUpNewAnimal();
 //        testAnimal.save();
 //        Animals foundAnimal= Animals.find(testAnimal.getId());
-//        assertTrue(foundAnimal.getHealth().equals(testAnimal.getHealth()));
+//        assertEquals(foundAnimal.getHealth(), testAnimal.getHealth());
 //
 //    }
 
