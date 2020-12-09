@@ -1,7 +1,6 @@
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class RangersTest {
 //    Teat 1
@@ -40,6 +39,23 @@ public class RangersTest {
         assertTrue(foundRanger.equals(ranger));
 
     }
+//Test 5
+    @Test
+    public void entryIsUpdatedCorrectly() {
+        Rangers ranger= setUpNewRanger();
+        Rangers otherRanger=ranger;
+        ranger.save();
+        try {
+            ranger.update(ranger.getId(),"Ruth Mwangi","0714735954");
+            Rangers foundRanger=Rangers.find(ranger.getId());
+            assertNotEquals(foundRanger,otherRanger);
+            assertEquals(foundRanger.getId(),otherRanger.getId());
+
+        }catch (IllegalArgumentException e){
+            System.out.println(e);
+        }
+    }
+
 
     //helper class
     private Rangers setUpNewRanger() {

@@ -65,4 +65,19 @@ public class Rangers {
         }
 
     }
+    public void update(int id,String name,String phone_number){
+        try (Connection con=DB.sql2o.open()){
+            String sql="UPDATE rangers SET name=:name,phone_number=:phone_number WHERE id=:id";
+            if(name.equals("")||phone_number.equals("")){
+                throw new IllegalArgumentException("All fields must be filled");
+            }
+            con.createQuery(sql)
+                    .addParameter("id",this.id)
+                    .addParameter("name",name)
+                    .addParameter("phone_number",phone_number)
+                    .executeUpdate();
+
+        }
+
+    }
 }
