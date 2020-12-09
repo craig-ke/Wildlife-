@@ -17,14 +17,14 @@ public class EndangeredAnimalsTest {
         assertEquals(EndangeredAnimals.all().get(0).getHealth(), testAnimal.getHealth());
     }
 
-//    @Test
-//    public void findByIdReturnsCorrectInfo(){
-//        EndangeredAnimals testAnimal=setUpNewAnimal();
-//        testAnimal.save();
-//        Animals foundAnimal= Animals.find(testAnimal.getId());
-//        assertEquals(foundAnimal.getHealth(), testAnimal.getHealth());
-//
-//    }
+    @Test
+    public void findByIdReturnsCorrectInfo(){
+        EndangeredAnimals testAnimal=setUpNewAnimal();
+        testAnimal.save();
+        Animals foundAnimal= Animals.find(testAnimal.getId());
+        assertEquals(foundAnimal.getHealth(), testAnimal.getHealth());
+
+    }
 
     private EndangeredAnimals setUpNewAnimal() {
         return new EndangeredAnimals("Albino Giraffe","endangered","healthy","young");
