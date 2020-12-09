@@ -1,12 +1,21 @@
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class RangersTest {
     @Test
     public void createInstanceOfRangersClass_true(){
         Rangers ranger= setUpNewRanger();
         assertEquals(true,ranger instanceof Rangers);
+    }
+
+    @Test
+    public void allEntriesAreSaved() {
+        Rangers ranger= setUpNewRanger();
+        ranger.save();
+        assertTrue(Rangers.all().get(0).equals(ranger));
+
     }
     //helper class
     private Rangers setUpNewRanger() {
