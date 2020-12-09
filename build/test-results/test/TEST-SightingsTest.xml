@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="SightingsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-09T08:01:15" hostname="craig-HP-Laptop-14s-dk0xxx" time="0.008">
+<testsuite name="SightingsTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2020-12-09T08:04:31" hostname="craig-HP-Laptop-14s-dk0xxx" time="0.009">
   <properties/>
-  <testcase name="createInstanceOfSightingsClass_true" classname="SightingsTest" time="0.008"/>
+  <testcase name="createInstanceOfSightingsClass_true" classname="SightingsTest" time="0.009"/>
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>
