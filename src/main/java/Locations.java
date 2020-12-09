@@ -27,4 +27,16 @@ public class Locations {
         }
     }
 
+    public void save(){
+        try (Connection con=DB.sql2o.open()){
+            String sql="INSERT INTO locations (name) VALUES (:name)";
+            if(name.equals("")){
+                throw new IllegalArgumentException("All fields must be filled");
+            }
+            this.id=(int) con.createQuery(sql,true)
+                    .addParameter("name",this.name)
+                    .executeUpdate()
+                    .getKey();
+        }
+    }
 }
