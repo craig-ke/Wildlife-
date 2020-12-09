@@ -34,6 +34,16 @@ public class EndangeredAnimalsTest {
 
     }
 
+    @Test
+    public void ensureNameFieldCannotBeEmpty(){
+        EndangeredAnimals testAnimal=new EndangeredAnimals("","endangered","","");
+        try {
+            testAnimal.save();
+        }catch (IllegalArgumentException e){
+
+        }
+    }
+
     private EndangeredAnimals setUpNewAnimal() {
         return new EndangeredAnimals("Albino Giraffe","endangered","healthy","young");
     }
