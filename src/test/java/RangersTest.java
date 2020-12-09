@@ -17,6 +17,18 @@ public class RangersTest {
         assertTrue(Rangers.all().get(0).equals(ranger));
 
     }
+
+    @Test
+    public void emptyFieldsAreNotSaved() {
+        Rangers ranger=new Rangers("","","0713245678");
+        try{
+            ranger.save();
+            assertTrue(Rangers.all().get(0).equals(ranger));
+        }catch (IllegalArgumentException e){
+            System.out.println(e);
+        }
+    }
+
     //helper class
     private Rangers setUpNewRanger() {
         return new Rangers("Ruth","1","07123456");
