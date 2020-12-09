@@ -25,6 +25,14 @@ public class EndangeredAnimalsTest {
         assertEquals(foundAnimal.getHealth(), testAnimal.getHealth());
 
     }
+    @Test
+    public void deleteByID(){
+        EndangeredAnimals testAnimal=setUpNewAnimal();
+        testAnimal.save();
+        testAnimal.delete();
+        assertEquals(null,Animals.find(testAnimal.getId()));
+
+    }
 
     private EndangeredAnimals setUpNewAnimal() {
         return new EndangeredAnimals("Albino Giraffe","endangered","healthy","young");
