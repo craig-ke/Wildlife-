@@ -39,4 +39,24 @@ public class Locations {
                     .getKey();
         }
     }
+
+    public void delete(){
+        try (Connection con=DB.sql2o.open()){
+            String sql="DELETE FROM locations WHERE id=:id";
+            con.createQuery(sql)
+                    .addParameter("id",this.id)
+                    .executeUpdate();
+        }
+    }
+
+    public static Locations find(int id){
+        try (Connection con=DB.sql2o.open()){
+            String sql="SELECT * FROM locations WHERE id=:id";
+            return con.createQuery(sql)
+                    .addParameter("id",id)
+                    .throwOnMappingFailure(false)
+                    .executeAndFetchFirst(Locations.class);
+        }
+
+    }
 }
