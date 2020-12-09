@@ -1,6 +1,7 @@
 import org.sql2o.Connection;
 
 import java.sql.Timestamp;
+
 import java.util.Date;
 import java.util.List;
 import java.util.Objects;
@@ -11,8 +12,9 @@ public class Sightings {
     private int location_id;
     private int ranger_id;
     private int animal_id;
-    private Date date = new Date();
+    private Date date= new Date();
     private Timestamp time;
+
 
 
     public Sightings(int location_id, int ranger_id, int animal_id) {
@@ -20,6 +22,7 @@ public class Sightings {
         this.ranger_id = ranger_id;
         this.animal_id = animal_id;
         this.time = new Timestamp(date.getTime());
+
     }
 
     public int getId() {
@@ -42,9 +45,9 @@ public class Sightings {
         return time;
     }
 
-    public static List<Sightings> all() {
-        try (Connection con = DB.sql2o.open()) {
-            String sql = ("SELECT * FROM sightings");
+    public static List<Sightings> all(){
+        try (Connection con =DB.sql2o.open()){
+            String sql=("SELECT * FROM sightings");
             return con.createQuery(sql)
                     .executeAndFetch(Sightings.class);
 
@@ -61,15 +64,15 @@ public class Sightings {
         }
     }
 
-    public void delete() {
-        try (Connection con = DB.sql2o.open()) {
-            String sql = "DELETE FROM sightings WHERE id=:id";
+    public void delete(){
+        try (Connection con=DB.sql2o.open()){
+            String sql="DELETE FROM sightings WHERE id=:id";
             con.createQuery(sql)
-                    .addParameter("id", this.id)
+                    .addParameter("id",this.id)
                     .executeUpdate();
         }
-    }
 
+    }
     public static void deleteAll(){
         try (Connection con=DB.sql2o.open()){
             String sql="DELETE FROM sightings";
@@ -108,6 +111,7 @@ public class Sightings {
 
     }
 
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -124,5 +128,3 @@ public class Sightings {
         return Objects.hash(id, location_id, ranger_id, animal_id);
     }
 }
-
-
