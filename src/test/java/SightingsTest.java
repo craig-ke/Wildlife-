@@ -24,6 +24,15 @@ public class SightingsTest {
 //        }
 //    }
 
+//    @Test
+//    public void findSightingByID() {
+//        Sightings sighting=setUpNewSighting();
+//        sighting.save();
+//        Sightings foundSighting=Sightings.find(sighting.getId());
+//        assertEquals(foundSighting, sighting);
+//
+//    }
+
     //helper
     private Sightings setUpNewSighting() {
         return new Sightings(1,1,1);
