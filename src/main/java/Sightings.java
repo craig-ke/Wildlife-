@@ -15,6 +15,12 @@ public class Sightings {
     private Date date= new Date();
     private Timestamp time;
 
+    private Rangers rangers;
+
+    public Rangers getRangers() {
+        return Rangers.find(ranger_id);
+    }
+
 
 
     public Sightings(int location_id, int ranger_id, int animal_id) {
