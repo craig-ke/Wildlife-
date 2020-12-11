@@ -33,7 +33,7 @@ public class App {
             return new ModelAndView(model,"ranger-form.hbs");
         },new HandlebarsTemplateEngine());
 
-        post("/create/ranger/new",(request, response) -> {
+        post("/create/rangers/new",(request, response) -> {
             Map<String,Object> model=new HashMap<String, Object>();
             String name=request.queryParams("name");
             String badge_number=request.queryParams("badge");

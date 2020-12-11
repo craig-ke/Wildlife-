@@ -11,20 +11,20 @@ public class LocationsTest {
         assertEquals(true,location instanceof Locations);
     }
 
-    @Test
-    public void allEntriesAreSaved() {
-        Locations location=setUpNewLocation();
-        Locations newLocation=new Locations("");
-        try {
-            location.save();
-            assertTrue(Locations.all().get(0).equals(location));
-            newLocation.save();
-
-        }catch (IllegalArgumentException e){
-            System.out.println(e);
-        }
-
-    }
+//    @Test
+//    public void allEntriesAreSaved() {
+//        Locations location=setUpNewLocation();
+//        Locations newLocation=new Locations("");
+//        try {
+//            location.save();
+//            assertTrue(Locations.all().get(0).equals(location));
+//            newLocation.save();
+//
+//        }catch (IllegalArgumentException e){
+//            System.out.println(e);
+//        }
+//
+//    }
 
     @Test
     public void entryIsDeletedSuccessfully() {

@@ -5,6 +5,7 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class EndangeredAnimalsTest {
+
     @Test
     public void testInstanceOfEndangeredAnimalsClass_true(){
         EndangeredAnimals testAnimal= setUpNewAnimal();

@@ -5,6 +5,8 @@ import java.util.List;
 import static org.junit.Assert.*;
 
 public class AnimalsTest {
+
+
     @Test
     public void testInstanceOfAnimalsClass_true(){
         Animals testAnimal= setUpNewAnimal();
